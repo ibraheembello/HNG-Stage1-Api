@@ -4,7 +4,8 @@
   "description": "HNG Stage 1 Backend API",
   "main": "dist/server.js",
   "scripts": {
-    "build": "npx prisma generate && tsc",
+    "build": "prisma generate && tsc",
+    "postinstall": "prisma generate",
     "start": "node dist/server.js",
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts"
   },
