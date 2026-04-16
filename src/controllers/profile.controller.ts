@@ -1,10 +1,8 @@
 import { Request, Response } from "express";
-import { PrismaClient } from "@prisma/client";
 import { uuidv7 } from "uuidv7";
+import prisma from "../lib/prisma";
 import { ExternalApiService } from "../services/external-api.service";
 import { determineAgeGroup, getTopCountry } from "../utils/classification";
-
-const prisma = new PrismaClient();
 
 export class ProfileController {
   static async createProfile(req: Request, res: Response): Promise<any> {
