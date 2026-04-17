@@ -12,9 +12,16 @@ app.use(cors({ origin: "*" }));
 // Middleware to parse JSON bodies
 app.use(express.json());
 
-// Swagger UI Documentation
+// Swagger UI Documentation with CDN assets for stability on Vercel
+const CSS_URL = "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui.min.css";
+
 app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
   customSiteTitle: "HNG Stage 1 API Documentation",
+  customCssUrl: CSS_URL,
+  customJs: [
+    "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-bundle.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-standalone-preset.js"
+  ],
   swaggerOptions: {
     persistAuthorization: true,
   }
