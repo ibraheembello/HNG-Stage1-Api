@@ -1,4 +1,5 @@
 import swaggerJsdoc from 'swagger-jsdoc';
+import path from 'path';
 
 const options: swaggerJsdoc.Options = {
   definition: {
@@ -23,7 +24,15 @@ const options: swaggerJsdoc.Options = {
       },
     ],
   },
-  apis: ['./src/routes/*.ts', './src/dtos/*.ts'],
+  // Use absolute paths to ensure files are found in both local and Vercel environments
+  apis: [
+    path.join(process.cwd(), 'src/routes/*.ts'),
+    path.join(process.cwd(), 'src/routes/*.js'),
+    path.join(process.cwd(), 'src/dtos/*.ts'),
+    path.join(process.cwd(), 'src/dtos/*.js'),
+    path.join(process.cwd(), 'dist/routes/*.js'),
+    path.join(process.cwd(), 'dist/dtos/*.js'),
+  ],
 };
 
 export const swaggerSpec = swaggerJsdoc(options);
