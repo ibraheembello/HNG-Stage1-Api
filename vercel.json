@@ -1,4 +1,24 @@
 {
   "version": 2,
-  "rewrites": [{ "source": "/(.*)", "destination": "/api/main" }]
+  "builds": [
+    {
+      "src": "api/main.ts",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/main"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/frontend/$1"
+    }
+  ]
 }
