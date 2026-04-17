@@ -89,5 +89,11 @@ npm run dev
 
 ---
 
+## 📖 API Documentation (Swagger)
+The full interactive API documentation is available via Swagger UI:
+👉 **[Live Documentation](https://hng-stage1-api.vercel.app/api/docs)**
+
+---
+
 ## 🛡 License
 MIT License. Developed for **HNG Internship Stage 1**.
