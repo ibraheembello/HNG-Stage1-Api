@@ -8,6 +8,10 @@
 
 A professional, full-stack application that classifies user demographics (Gender, Age Group, Nationality) using real-time data from three external APIs. It features a high-performance Express backend and a modern, interactive React dashboard.
 
+## 📱 Preview
+
+![Profile Classifier Dashboard](assets/dashboard.png)
+
 ---
 
 ## 🏗 Project Architecture
