@@ -1,15 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://hng-stage1-api.vercel.app/api';
-
-const api = axios.create({
-  baseURL: API_BASE_URL,
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
-
-export interface Profile {
+export type Profile = {
   id: string;
   name: string;
   gender: string;
@@ -21,6 +12,15 @@ export interface Profile {
   country_probability: number;
   created_at: string;
 }
+
+const API_BASE_URL = 'https://hng-stage1-api.vercel.app/api';
+
+const api = axios.create({
+  baseURL: API_BASE_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
 
 export const getProfiles = async (params?: { gender?: string; country_id?: string; age_group?: string }) => {
   const response = await api.get('/profiles', { params });

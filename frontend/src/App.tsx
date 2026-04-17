@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { UserPlus, Search, Trash2, Users, Info } from 'lucide-react';
-import { Profile, getProfiles, createProfile, deleteProfile } from './api';
+import type { Profile } from './api';
+import { getProfiles, createProfile, deleteProfile } from './api';
 import './App.css';
 
 function App() {
@@ -175,7 +176,7 @@ function App() {
                   </div>
                   <div className="stat-item">
                     <span>Data Sample Size</span>
-                    <strong>{profile.sample_size.toLocaleString()}</strong>
+                    <strong>{profile.sample_size?.toLocaleString() ?? 'N/A'}</strong>
                   </div>
                 </div>
                 <div style={{ marginTop: '1rem', fontSize: '0.75rem', color: 'var(--text-muted)' }}>

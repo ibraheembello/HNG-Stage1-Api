@@ -95,9 +95,13 @@ export class ProfileController {
           id: true,
           name: true,
           gender: true,
+          gender_probability: true,
+          sample_size: true,
           age: true,
           age_group: true,
           country_id: true,
+          country_probability: true,
+          created_at: true,
         },
       });
 
